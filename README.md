@@ -4,12 +4,13 @@
 
 ## Information about this repository
 
-This repository contains a python implementation of an encoding in Integer Linear Programming (ILP) proposed by Fernando H. C. Dias, Lucia Williams, Brendan Mumey, and Alexandru I. Tomescu, in their paper "Fast, Flexible, and Exact Minimum Flow Decompositions via ILP" [See the paper here](https://dl.acm.org/doi/abs/10.1007/978-3-031-04749-7_14).
+This repository contains a python implementation of an encoding in Integer Linear Programming (ILP) proposed by Fernando H. C. Dias, Lucia Williams, Brendan Mumey, and Alexandru I. Tomescu, in their paper "Fast, Flexible, and Exact Minimum Flow Decompositions via ILP" [(see the paper here)](https://dl.acm.org/doi/abs/10.1007/978-3-031-04749-7_14).
 
-I also used this paper as an excuse to play around the Integer Optimization package of the [Google OR-Tools](https://developers.google.com/optimization).
+I also used this paper as an excuse to play around the Integer Optimization package of [Google OR-Tools](https://developers.google.com/optimization).
 
 ## Dependencies
 Make sure you have installed the OR-tools package. You can use pip to install it: `pip install ortools`.
+
 To run the program, use the command `python3 MFD.py`.
 
 ## Authors
