@@ -68,7 +68,7 @@ def Encode(k,A,F):
     #Add some objective function (we are just interested in deciding whether or not these constraints form a feasible region)
     solver.Minimize(sum(flatten(pi_variables)) + sum(flatten(edge_variables)))
 
-    #Example of a subpath constraint: R=([[(1,3),(3,5)],[(0,1)]]), means that we have 2 paths, the first one is 1-3-5. the second path is just a single edge 0-1
+    #Example of a subpath constraint: R=([[(1,3),(3,5)],[(0,1)]]), means that we have 2 paths to cover, the first one is 1-3-5. the second path is just a single edge 0-1
     def EncodeSubpathConstraints(R):
         path_variables=[]
         for i in range(1,k+1):
@@ -91,8 +91,6 @@ def Encode(k,A,F):
             solver.Add( sum( pi_variables[i][e] for i in range(len(pi_variables)) ) <= F_high[head(pi_variables[0][e])][tail(pi_variables[0][e])] )
             solver.Add( sum( pi_variables[i][e] for i in range(len(pi_variables)) ) >= F_low[head(pi_variables[0][e])][tail(pi_variables[0][e])] )
         return
-
-    #EncodeSubpathConstraints([[(1,3),(3,5)],[(0,1)]])
 
     print('Number of variables =', solver.NumVariables())
     print('Number of constraints =', solver.NumConstraints())
@@ -132,7 +130,7 @@ def LinearSearch(A,F):
     global solver
     global infinity
     k = len(list(filter(lambda f_sv: f_sv!=0, F[source]))) #k = |{v in V : f(s,v)>0}| trivial lower bound
-    k=3
+
     while k <= min(E,f):
 
         solver = pywraplp.Solver.CreateSolver('SCIP') #creating a new solver in each iteration because I was having trouble with the clear() method... zz
