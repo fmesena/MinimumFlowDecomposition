@@ -6,15 +6,16 @@ def flatten(l):       return [item for sublist in l for item in sublist]
 def head(x):          return int(x.name().split('_')[1])
 def tail(x):          return int(x.name().split('_')[2])
 def exists_edge(e,p): return len(list(filter(lambda x: tail(e)==x[0] and head(e)==x[1], p)))>=1
-
-'''def flatten(l):
+'''
+def flatten(l):
     if l==[]:
         return []
     else:
         if not isinstance(l[0], list):
             return [l[0]] + flatten(l[1:])
         else:
-            return flatten(l[0]) + flatten(l[1:])'''
+            return flatten(l[0]) + flatten(l[1:])
+'''
 
 
 def PrintSolution(solution):
