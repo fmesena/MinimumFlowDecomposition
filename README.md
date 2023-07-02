@@ -15,4 +15,4 @@ To run the program, use the command `python3 MFD.py`.
 
 ## Authors
 This project was developed by Francisco Sena from Instituto Superior Técnico - University of Lisbon, Portugal.
-For *any* questions: f.miguel.sena@tecnico.ulisboa.pt
+For *any* questions: fmesena@gmail.com
